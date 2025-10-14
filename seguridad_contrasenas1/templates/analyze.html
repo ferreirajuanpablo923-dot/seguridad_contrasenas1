@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm p-4">
+      <h3 class="mb-3">Analizar contraseña</h3>
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Contraseña a evaluar</label>
+          <input type="password" name="password" class="form-control" required>
+          <div class="form-text">Se guardará una versión enmascarada por seguridad.</div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="twofa" name="twofa">
+          <label class="form-check-label" for="twofa">Simular 2FA activado</label>
+        </div>
+        <button class="btn btn-primary">Analizar</button>
+      </form>
+      <hr>
+      <a class="btn btn-link" href="{{ url_for('results') }}">Ver historial</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

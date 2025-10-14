@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm p-3">
+  <h3>Historial de análisis</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr><th>Contraseña (enmascarada)</th><th>Resultado</th><th>Fecha</th></tr>
+    </thead>
+    <tbody>
+      {% for row in analyses %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+      </tr>
+      {% endfor %}
+      {% if analyses|length == 0 %}
+      <tr><td colspan="3">No hay análisis todavía.</td></tr>
+      {% endif %}
+    </tbody>
+  </table>
+  <a href="{{ url_for('analyze') }}" class="btn btn-primary">Nuevo análisis</a>
+</div>
+{% endblock %}
