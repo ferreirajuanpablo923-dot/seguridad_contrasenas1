@@ -99,7 +99,7 @@ pipeline {
                     
                     // Crear ZIP con todo el proyecto
                     bat """
-                        powershell -Command "Compress-Archive -Path seguridad_contrasenas1\\*,requirements.txt,version_info.txt,app.py -DestinationPath releases\\${PACKAGE_NAME}-completo.zip -Force"
+                        powershell -Command "Compress-Archive -Path seguridad_contrasenas1\\*,requirements.txt,version_info.txt -DestinationPath releases\\${PACKAGE_NAME}-completo.zip -Force"
                     """
                     
                     // Si existe dist, copiar archivos
