@@ -1,0 +1,2 @@
+[console_scripts]
+seguridad_contrasenas = app:app
